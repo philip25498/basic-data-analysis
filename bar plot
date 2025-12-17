@@ -1,0 +1,28 @@
+# bar gragh
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Count the occurrences of each problem category
+category_counts = df['problem_category'].value_counts()
+
+# Set a style for the plot
+sns.set_style("whitegrid")
+
+# Create the histogram (bar plot for categorical data)
+plt.figure(figsize=(12, 6))
+sns.barplot(x=category_counts.index, y=category_counts.values, palette='viridis', hue=category_counts.index, legend=False)
+
+# Add titles and labels for clarity
+plt.title('Distribution of Problem Categories')
+plt.xlabel('Problem Category')
+plt.ylabel('Number of Problems')
+
+# Rotate x-axis labels if they are too long and overlap
+plt.xticks(rotation=45, ha='right')
+
+# Adjust layout to prevent labels from being cut off
+plt.tight_layout()
+
+# Display the plot
+plt.show()
