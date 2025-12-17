@@ -1,0 +1,27 @@
+# scatter plot  for data
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set a style for the plot
+sns.set_style("whitegrid")
+
+# Set the figure size for the plot
+plt.figure(figsize=(14, 7))
+
+# Create the scatter plot
+sns.scatterplot(x=category_counts.index, y=category_counts.values, s=100, color='red') # 's' for marker size
+
+# Add titles and labels for clarity
+plt.title('Scatter Plot of Problem Category Distribution')
+plt.xlabel('Problem Category')
+plt.ylabel('Number of Problems')
+
+# Rotate x-axis labels if they are too long and overlap
+plt.xticks(rotation=45, ha='right')
+
+# Adjust layout to prevent labels from being cut off
+plt.tight_layout()
+
+# Display the plot
+plt.show()
